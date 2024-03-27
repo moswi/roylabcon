@@ -1,2 +1,2 @@
-# reilabcon
+# roylabcon
 Lab server installer
