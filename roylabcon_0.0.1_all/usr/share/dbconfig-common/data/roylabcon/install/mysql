@@ -1,1 +1,3 @@
 ALTER DATABASE roylabcon CHARACTER SET utf8mb4 COLLATE utf8mb4_latvian_ci;
+
+CREATE TABLE `test` (`sss` varchar(4) PRIMARY KEY NOT NULL);
