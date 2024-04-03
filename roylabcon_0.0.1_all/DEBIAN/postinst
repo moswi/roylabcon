@@ -12,3 +12,7 @@ dbc_mysql_createdb_encoding="utf8mb4"
 dbc_generate_include=php:/etc/roylabcon/debian-db.php
 dbc_go roylabcon "$@"
 
+usermod -a -G dialout www-data
+
+a2ensite roylabcon.conf
+systemctl reload apache2
