@@ -1,3 +1,7 @@
 ALTER DATABASE roylabcon CHARACTER SET utf8mb4 COLLATE utf8mb4_latvian_ci;
 
-CREATE TABLE IF NOT EXISTS `test` (`sss` varchar(4) PRIMARY KEY NOT NULL);
+CREATE TABLE IF NOT EXISTS `raw_requests` (
+    `time` double PRIMARY KEY NOT NULL,
+    `server_global` json NOT NULL,
+    `post` text NOT NULL
+);
