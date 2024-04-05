@@ -5,3 +5,14 @@ CREATE TABLE IF NOT EXISTS `raw_requests` (
     `server_global` json NOT NULL,
     `post` text NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS `diag110` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);

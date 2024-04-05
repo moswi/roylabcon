@@ -57,4 +57,34 @@ $stmt->bind_param("dss", $_SERVER["REQUEST_TIME_FLOAT"], $json, $post);
 #    b 	corresponding variable is a blob and will be sent in packets
 
 $stmt->execute();
-diag_serial($json);
+#diag_serial($json);
+
+$post_json_xml = json_decode($post, true);
+#print_r($post_json_xml);
+#echo $post;
+
+if ($_SERVER["REMOTE_ADDR"] == "192.168.6.110") {
+    $table = "diag110";
+}
+
+if (isset($post_json_xml["diagnostic"])) {
+    $diag = $post_json_xml["diagnostic"];
+    #print_r($diag);
+    $stmt = $mysqli->prepare("INSERT INTO " . $table .
+        " (time, start_time, sync_sys_time, delta_sync_sys_time, sync_NTP_time, delta_sync_NTP_time, sys_uptime_usec, uptime_NTP) " .
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param(
+        "ddiiddid",
+        $_SERVER["REQUEST_TIME_FLOAT"],
+        $diag["start_time"],
+        $diag["sync_sys_time"],
+        $diag["delta_sync_sys_time"],
+        $diag["sync_NTP_time"],
+        $diag["delta_sync_NTP_time"],
+        $diag["sys_uptime_usec"],
+        $diag["uptime_NTP"]
+    );
+    $stmt->execute();
+}
+
+echo $post;
