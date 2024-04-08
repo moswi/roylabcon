@@ -65,18 +65,33 @@ $post_json_xml = json_decode($post, true);
 
 if ($_SERVER["REMOTE_ADDR"] == "192.168.6.110") {
     $table = "diag110";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.111") {
+    $table = "diag111";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.112") {
+    $table = "diag112";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.113") {
+    $table = "diag113";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.114") {
+    $table = "diag114";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.115") {
+    $table = "diag115";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.116") {
+    $table = "diag116";
+} elseif ($_SERVER["REMOTE_ADDR"] == "192.168.6.117") {
+    $table = "diag117";
 }
 
-if (isset($post_json_xml["diagnostic"])) {
+if (isset($table) and isset($post_json_xml["diagnostic"])) {
     $diag = $post_json_xml["diagnostic"];
     #print_r($diag);
     $stmt = $mysqli->prepare("INSERT INTO " . $table .
-        " (time, start_time, sync_sys_time, delta_sync_sys_time, sync_NTP_time, delta_sync_NTP_time, sys_uptime_usec, uptime_NTP) " .
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        " (time, start_time,start_ctime, sync_sys_time, delta_sync_sys_time, sync_NTP_time, delta_sync_NTP_time, sys_uptime_usec, uptime_NTP) " .
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param(
-        "ddiiddid",
+        "ddsiiddid",
         $_SERVER["REQUEST_TIME_FLOAT"],
         $diag["start_time"],
+        $diag["start_ctime"],
         $diag["sync_sys_time"],
         $diag["delta_sync_sys_time"],
         $diag["sync_NTP_time"],

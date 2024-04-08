@@ -9,6 +9,86 @@ CREATE TABLE IF NOT EXISTS `raw_requests` (
 CREATE TABLE IF NOT EXISTS `diag110` (
     `time` double PRIMARY KEY NOT NULL,
     `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `diag111` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `diag112` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `diag113` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `diag114` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `diag115` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `diag116` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
+    `sync_sys_time` int UNSIGNED NOT NULL,
+    `delta_sync_sys_time` int UNSIGNED NOT NULL,
+    `sync_NTP_time` double NOT NULL,
+    `delta_sync_NTP_time` double NOT NULL,
+    `sys_uptime_usec` bigint UNSIGNED NOT NULL,
+    `uptime_NTP` double NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `diag117` (
+    `time` double PRIMARY KEY NOT NULL,
+    `start_time` double NOT NULL,
+    `start_ctime` char(24) NOT NULL,
     `sync_sys_time` int UNSIGNED NOT NULL,
     `delta_sync_sys_time` int UNSIGNED NOT NULL,
     `sync_NTP_time` double NOT NULL,
